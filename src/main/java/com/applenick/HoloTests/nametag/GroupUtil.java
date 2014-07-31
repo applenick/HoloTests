@@ -24,7 +24,7 @@ public class GroupUtil {
 	}
 	
 	public static void addToTeam(Player p){
-	Team t = HoloTest.get().getServer().getScoreboardManager().getMainScoreboard().getTeam(HoloTest._appleGroup);
+	Team t = HoloTest.get().getServer().getScoreboardManager().getNewScoreboard().getTeam(HoloTest._appleGroup);
 	t.addPlayer(p);
 	}
 	
