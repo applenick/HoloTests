@@ -10,7 +10,7 @@ public class Config {
 	
 	public static class Format{
 		public static String getGroupName(){
-			return getConfig().getString("format.group");
+			return getConfig().getString("group.name");
 		}
 	}
  
