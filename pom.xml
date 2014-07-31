@@ -10,6 +10,10 @@
 			<id>spigot-repo</id>
 			<url>http://repo.md-5.net/content/groups/public/</url>
 		</repository>
+		<repository>
+			<id>overcast-repo</id>
+			<url>https://repo.oc.tc/content/groups/public</url>
+		</repository>
 	</repositories>
 
 
@@ -24,10 +28,15 @@
 			<artifactId>spigot</artifactId>
 			<version>1.7.9-R0.3-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sk89q</groupId>
+			<artifactId>command-framework-bukkit</artifactId>
+			<version>0.5-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
-	
-	
-	
+
+
+
 	<build>
 		<sourceDirectory>${basedir}/src/main/java/</sourceDirectory>
 		<resources>
@@ -38,6 +47,26 @@
 			</resource>
 		</resources>
 		<plugins>
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<includes>
+									<include>com.sk89q:command-framework-bukkit</include>
+								</includes>
+							</artifactSet>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
