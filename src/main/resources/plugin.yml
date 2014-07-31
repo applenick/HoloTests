@@ -1,0 +1,4 @@
+name: HoloTest
+main: com.applenick.HoloTest.HoloTest
+version: ${project.version}-${git.commit.id.abbrev}
+author: AppleNick
