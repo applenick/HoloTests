@@ -28,9 +28,6 @@ public class HoloTest extends JavaPlugin {
 	public void onEnable(){
 		holotest = this;
 		
-        this.getConfig().options().copyDefaults(true);
-        this.saveConfig();
-		
 		setup();
 		
 		this.setupListener(new PlayerListener());
@@ -38,7 +35,7 @@ public class HoloTest extends JavaPlugin {
 		setupCommands();
 	}
 	
-	public static String _prefix = ChatColor.WHITE + "[" + ChatColor.RED + Config.Format.getGroupName() + ChatColor.WHITE + "]";
+	public static String _prefix = ChatColor.WHITE + "[" + ChatColor.RED + "Apple" + ChatColor.WHITE + "]";
 	public static String _appleGroup = "apple";
 	
 	private void setup(){
