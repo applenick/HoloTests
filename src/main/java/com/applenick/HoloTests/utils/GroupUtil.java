@@ -25,6 +25,8 @@ public class GroupUtil {
 		Team t = ScoreboardUtil.getScoreBoard().getTeam(HoloTest._appleGroup);
 		
 		t.addPlayer(p);
+		
+		t.setDisplayName("TEST");
 	}
 	
 
