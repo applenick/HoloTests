@@ -20,10 +20,6 @@ import com.sk89q.minecraft.util.commands.WrappedCommandException;
 
 public class HoloTest extends JavaPlugin {
 	
-	public static String _prefix = ChatColor.WHITE + "[" + ChatColor.RED + "Apple" + ChatColor.WHITE + "]";
-	public static String _appleGroup = "apple";
-	
-	
 	private static HoloTest holotest;
 	public static HoloTest get(){
 		return holotest;
@@ -38,6 +34,9 @@ public class HoloTest extends JavaPlugin {
 
 		setupCommands();
 	}
+	
+	public static String _prefix = ChatColor.WHITE + "[" + ChatColor.RED + Config.Format.getGroupName() + ChatColor.WHITE + "]";
+	public static String _appleGroup = "apple";
 	
 	private void setup(){
 		ScoreboardUtil.setupScoreboards();
