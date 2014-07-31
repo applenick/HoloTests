@@ -19,12 +19,8 @@ public class GroupUtil {
 	}
 	
 	public static void addToTeam(Player p){
-		
 		Team t = ScoreboardUtil.getScoreBoard().getTeam(HoloTest._appleGroup);
-		
-		t.addPlayer(p);
-		
-		Alog.console(t.getDisplayName() + " " + t.getPrefix());
+		t.addPlayer(p);		
 	}
 	
 
