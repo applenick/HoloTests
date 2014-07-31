@@ -9,7 +9,7 @@ public class ScoreboardUtil {
 	
 	public static ScoreboardManager manager;
 	public static Scoreboard mainBoard;
-	
+		
 	public static void setupScoreboards(){
 		manager = HoloTest.get().getServer().getScoreboardManager();
 		mainBoard = manager.getNewScoreboard();
