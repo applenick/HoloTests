@@ -4,7 +4,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import com.applenick.HoloTests.nametag.GroupUtil;
+import com.applenick.HoloTests.utils.GroupUtil;
 
 public class PlayerListener implements Listener {
 	

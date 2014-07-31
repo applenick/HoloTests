@@ -8,7 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.applenick.HoloTests.commands.HoloCommands;
-import com.applenick.HoloTests.nametag.GroupUtil;
+import com.applenick.HoloTests.utils.GroupUtil;
+import com.applenick.HoloTests.utils.ScoreboardUtil;
 import com.sk89q.bukkit.util.CommandsManagerRegistration;
 import com.sk89q.minecraft.util.commands.CommandException;
 import com.sk89q.minecraft.util.commands.CommandPermissionsException;
@@ -22,6 +23,7 @@ public class HoloTest extends JavaPlugin {
 	public static String _prefix = ChatColor.WHITE + "[" + ChatColor.RED + "Apple" + ChatColor.WHITE + "]";
 	public static String _appleGroup = "apple";
 	
+	
 	private static HoloTest holotest;
 	public static HoloTest get(){
 		return holotest;
@@ -30,12 +32,16 @@ public class HoloTest extends JavaPlugin {
 	public void onEnable(){
 		holotest = this;
 		
-		GroupUtil.setupNameGroup(_appleGroup , _prefix);
-		
+		setup();
 		
 		this.setupListener(new PlayerListener());
 
 		setupCommands();
+	}
+	
+	private void setup(){
+		ScoreboardUtil.setupScoreboards();
+		GroupUtil.setupNameGroup(_appleGroup, _prefix);
 	}
 	
 	private void setupListener(Listener listener){

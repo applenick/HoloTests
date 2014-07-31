@@ -1,9 +1,8 @@
-package com.applenick.HoloTests.nametag;
+package com.applenick.HoloTests.utils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
 import com.applenick.HoloTests.HoloTest;
@@ -11,9 +10,7 @@ import com.applenick.HoloTests.HoloTest;
 public class GroupUtil {
 	
 	public static void setupNameGroup(String teamName, String prefix) {
-		ScoreboardManager manage = HoloTest.get().getServer().getScoreboardManager();
-		Scoreboard groupTeam = manage.getNewScoreboard();
-		setupGroup(groupTeam , teamName , prefix);
+		setupGroup(ScoreboardUtil.getScoreBoard() , teamName , prefix);
 	}
 	
 	private static Team setupGroup(Scoreboard scoreboard, String teamName, String teamPrefix) {
@@ -24,8 +21,10 @@ public class GroupUtil {
 	}
 	
 	public static void addToTeam(Player p){
-	Team t = HoloTest.get().getServer().getScoreboardManager().getNewScoreboard().getTeam(HoloTest._appleGroup);
-	t.addPlayer(p);
+		
+		Team t = ScoreboardUtil.getScoreBoard().getTeam(HoloTest._appleGroup);
+		
+		t.addPlayer(p);
 	}
 	
 
