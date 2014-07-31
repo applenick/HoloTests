@@ -28,6 +28,9 @@ public class HoloTest extends JavaPlugin {
 	public void onEnable(){
 		holotest = this;
 		
+        this.getConfig().options().copyDefaults(true);
+        this.saveConfig();
+		
 		setup();
 		
 		this.setupListener(new PlayerListener());
